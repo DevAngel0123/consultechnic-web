@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Platform - Consultechnic</title>
+    <meta name="description"
+        content="Desarrollo experto en Microsoft Power Platform. Power Apps, Power Automate, Power BI e integraciones de IA para optimizar su empresa. Consultechnic - Consultores en Tecnología">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <style>
+        /* ---- Power Hero ---- */
+        .pp-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 50%, #1DB954 100%);
+            padding-top: 100px;
+        }
+
+        .pp-hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: ppPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes ppPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 0.7;
+            }
+        }
+
+        .pp-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pp-hero-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .pp-hero-title .highlight {
+            background: linear-gradient(135deg, #3ED6A2, #1DB954);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pp-hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .pp-hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pp-image-container {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: ppFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes ppFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* ---- Badges ---- */
+        .pp-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.8rem 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #0F3D2E;
+        }
+
+        .pp-badge i {
+            color: #1DB954;
+        }
+
+        .pp-badge-1 {
+            top: -20px;
+            right: -30px;
+        }
+
+        .pp-badge-2 {
+            bottom: 20px;
+            left: -40px;
+        }
+
+        .pp-badge-3 {
+            top: 40%;
+            right: -50px;
+        }
+
+        /* ---- Capabilities ---- */
+        .pp-section {
+            padding: 90px 0;
+            background: #fff;
+        }
+
+        .pp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pp-card {
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            background: #fdfdfd;
+            border: 1px solid rgba(29, 185, 84, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .pp-card:hover {
+            transform: translateY(-10px);
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(29, 185, 84, 0.08);
+            border-color: #1DB954;
+        }
+
+        .pp-card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ---- Process Steps (Consistent with Premium Design) ---- */
+        .lic-process {
+            padding: 90px 0;
+            background: #fdfdfd;
+        }
+
+        .lic-process-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .lic-process-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .lic-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .lic-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(29, 185, 84, 0.05), rgba(62, 214, 162, 0.4), rgba(29, 185, 84, 0.05));
+        }
+
+        .lic-process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lic-step-num {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
+            transition: all 0.4s ease;
+            border: 4px solid #fff;
+        }
+
+        .lic-process-step:hover .lic-step-num {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(29, 185, 84, 0.4);
+        }
+
+        .lic-step-icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #1DB954;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lic-process-step h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.8rem;
+        }
+
+        .lic-process-step p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        /* ---- Premium Integrations Redesign ---- */
+        .pp-integrations {
+            padding: 100px 0;
+            background: radial-gradient(circle at 0% 0%, #0F3D2E 0%, #0a291f 100%);
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .pp-integrations::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(rgba(62, 214, 162, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+
+        .pp-integrations-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pp-integrations-header h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .pp-integrations-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pp-glass-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pp-glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3.5rem 2.5rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pp-glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: 0.5s;
+        }
+
+        .pp-glass-card:hover::before {
+            left: 100%;
+        }
+
+        .pp-glass-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(62, 214, 162, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(62, 214, 162, 0.1);
+        }
+
+        .pp-glass-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(29, 185, 84, 0.15);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: #3ED6A2;
+            transition: all 0.4s ease;
+            box-shadow: inset 0 0 15px rgba(62, 214, 162, 0.2);
+        }
+
+        .pp-glass-card:hover .pp-glass-icon {
+            background: #1DB954;
+            color: #fff;
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 25px rgba(29, 185, 84, 0.4);
+        }
+
+        .pp-glass-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .pp-glass-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .pp-glass-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pp-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pp-badge {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="../index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li class="nav-item nav-item-dropdown">
+                        <a href="../index.html#servicios" class="nav-link active">Servicios <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="soluciones-microsoft.html" class="dropdown-item">Soluciones Microsoft</a>
+                            <a href="licenciamiento.html" class="dropdown-item">Licenciamiento</a>
+                            <a href="hardware-software.html" class="dropdown-item">Hardware & Software</a>
+                            <a href="power-platform.html" class="dropdown-item">Power Platform</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="../index.html#portafolio" class="nav-link">Portafolio</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-cta">Cotizar <i
+                                class="fas fa-arrow-right"></i></a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pp-hero">
+        <div class="container">
+            <div class="pp-hero-content">
+                <div class="pp-hero-text reveal-left">
+                    <div class="section-label"><i class="fas fa-bolt"></i> Low-Code Revolution</div>
+                    <h1 class="pp-hero-title">Acelere su Innovación con <span class="highlight">Power Platform</span>
+                    </h1>
+                    <p class="pp-hero-subtitle">Desarrollamos soluciones ágiles que integran IA, automatización y
+                        análisis de datos para transformar procesos complejos en experiencias digitales simples.</p>
+                </div>
+                <div class="pp-hero-visual reveal-right">
+                    <div class="pp-image-container">
+                        <img src="../assets/images/powerplatform.png" alt="Power Platform"
+                            style="max-width: 100%; height: auto;">
+                        <div class="pp-badge pp-badge-1"><i class="fas fa-robot"></i> AI Ready</div>
+                        <div class="pp-badge pp-badge-2"><i class="fas fa-link"></i> Integraciones</div>
+                        <div class="pp-badge pp-badge-3"><i class="fas fa-mobile-alt"></i> Mobile</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pp-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-code-branch"></i> Capacidades
+                </div>
+                <h2>Desarrollo y Consultoría Especializada</h2>
+            </div>
+            <div class="pp-grid stagger">
+                <div class="pp-card reveal">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Power Apps</h3>
+                    <p>Creamos aplicaciones personalizadas para web y móvil que solucionan problemas de negocio
+                        específicos sin los tiempos de desarrollo tradicionales.</p>
+                </div>
+                <div class="pp-card reveal">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Power Automate</h3>
+                    <p>Automatizamos sus flujos de trabajo repetitivos e integramos sistemas heterogéneos (ERP, CRM,
+                        Legacy) para eliminar silos de información.</p>
+                </div>
+                <div class="pp-card reveal">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Power BI</h3>
+                    <p>Convertimos sus datos en visualizaciones interactivas y dashboards inteligentes para una toma de
+                        decisiones basada en información real.</p>
+                </div>
+                <div class="pp-card reveal">
+                    <i class="fas fa-microchip"></i>
+                    <h3>IA & Copilot</h3>
+                    <p>Integramos capacidades de Inteligencia Artificial Generativa y Copilot dentro de sus procesos
+                        para potenciar la productividad de sus equipos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section (Redesigned) -->
+    <section class="pp-integrations">
+        <div class="container">
+            <div class="pp-integrations-header reveal">
+                <div class="section-label"
+                    style="background: rgba(62, 214, 162, 0.1); color: #3ED6A2; border-color: rgba(62, 214, 162, 0.2);">
+                    <i class="fas fa-network-wired"></i> Conectividad Total
+                </div>
+                <h2>Integraciones Sin Límites</h2>
+                <p>Potenciamos Power Platform conectándola con su ecosistema tecnológico actual, eliminando barreras y
+                    silos de datos.</p>
+            </div>
+            <div class="pp-glass-grid stagger">
+                <div class="pp-glass-card reveal">
+                    <div class="pp-glass-icon"><i class="fas fa-database"></i></div>
+                    <h3>Sistemas Legacy</h3>
+                    <p>Modernizamos su infraestructura antigua mediante On-premises Data Gateways, permitiendo que sus
+                        apps modernas "hablen" con bases de datos locales.</p>
+                </div>
+                <div class="pp-glass-card reveal">
+                    <div class="pp-glass-icon"><i class="fas fa-plug"></i></div>
+                    <h3>API Personalizadas</h3>
+                    <p>Desarrollamos conectores personalizados de alto rendimiento para interactuar con cualquier
+                        microservicio o API de terceros, sin importar la complejidad.</p>
+                </div>
+                <div class="pp-glass-card reveal">
+                    <div class="pp-glass-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>Microsoft 365</h3>
+                    <p>Explotamos la sinergia nativa con SharePoint, Teams, Outlook y Dynamics 365 para crear un entorno
+                        de trabajo cohesivo y automatizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="lic-process" style="background: #f9fafb;">
+        <div class="container">
+            <div class="lic-process-header reveal">
+                <h2>Ruta de Desarrollo Ágil</h2>
+            </div>
+            <div class="lic-process-grid stagger">
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        1
+                        <div class="lic-step-icon"><i class="fas fa-search"></i></div>
+                    </div>
+                    <h4>Descubrimiento</h4>
+                    <p>Inmersión profunda en sus procesos actuales para identificar cuellos de botella.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        2
+                        <div class="lic-step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    </div>
+                    <h4>Prototipado</h4>
+                    <p>Diseño rápido y validación de la experiencia de usuario (UX) antes del desarrollo final.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        3
+                        <div class="lic-step-icon"><i class="fas fa-code"></i></div>
+                    </div>
+                    <h4>Desarrollo Agile</h4>
+                    <p>Construcción iterativa con Power Apps y Automate, integrando conectores de IA.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        4
+                        <div class="lic-step-icon"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <h4>Gobernanza</h4>
+                    <p>Establecimiento de políticas de seguridad, DLP y despliegue en producción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="footer-logo">
+                    <p>Consultoría y Soluciones de valor en Tecnología. Transformamos empresas a través de la innovación
+                        digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="soluciones-microsoft.html">Soluciones Microsoft</a></li>
+                        <li><a href="licenciamiento.html">Licenciamiento</a></li>
+                        <li><a href="hardware-software.html">Hardware y Software</a></li>
+                        <li><a href="power-platform.html">Power Platform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="../index.html#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="../index.html#portafolio">Portafolio</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span> Consultechnic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573178549632" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

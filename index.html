@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultechnic - Soluciones Tecnológicas Profesionales</title>
+    <meta name="description"
+        content="Empresa de tecnología especializada en servicios Microsoft, licenciamiento, venta de hardware y software, y desarrollo con Power Platform">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#inicio">
+                        <img src="assets/images/CT_Blanco.png" alt="Consultechnic" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item nav-item-dropdown">
+                        <a href="#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="paginas/soluciones-microsoft.html" class="dropdown-item">Soluciones Microsoft</a>
+                            <a href="paginas/licenciamiento.html" class="dropdown-item">Licenciamiento</a>
+                            <a href="paginas/hardware-software.html" class="dropdown-item">Hardware & Software</a>
+                            <a href="paginas/power-platform.html" class="dropdown-item">Power Platform</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#nosotros" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portafolio" class="nav-link">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-cta">Cotizar <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-circle"></i> CONSULTECHNIC - Desde 2015 en Colombia
+                </div>
+                <h1 class="hero-title">
+                    Soluciones <span class="highlight">Tecnológicas</span> Profesionales
+                </h1>
+
+                <div class="hero-buttons" style="margin-top: 2rem;">
+                    <a href="#servicios" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Nuestros Servicios
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <i class="fas fa-comments"></i> Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <div class="section-label"><i class="fas fa-building"></i> Quiénes somos</div>
+                    <h2 class="section-title">Sobre Consultechnic</h2>
+                    <p class="about-description">
+                        Somos una empresa especializada en la integración de soluciones tecnológicas corporativas.
+                        Desde 2015, hemos trabajado con organizaciones en Colombia en procesos de modernización,
+                        enfocándonos en optimizar la gestión tecnológica a través del diseño estratégico, análisis
+                        detallado, perfilamiento técnico y soluciones innovadoras.
+                    </p>
+                    <p class="about-benefits">
+                        Nuestro trabajo se traduce en una reducción significativa de costos operativos y una mejora
+                        sustancial en la eficiencia y sostenibilidad tecnológica para nuestros clientes.
+                    </p>
+
+                    <div class="about-features stagger">
+                        <div class="feature reveal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Experiencia comprobada en Microsoft</span>
+                        </div>
+                        <div class="feature reveal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soporte técnico especializado</span>
+                        </div>
+                        <div class="feature reveal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Soluciones personalizadas</span>
+                        </div>
+                        <div class="feature reveal">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Servicio al cliente excepcional</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal-right">
+                    <canvas id="team-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cifras / Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid stagger">
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-number" data-target="200">0</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Compromiso Total</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label"><i class="fas fa-cogs"></i> Lo que hacemos</div>
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <!-- <p class="section-subtitle">Soluciones integrales de tecnología para impulsar el crecimiento de tu
+                    empresa</p> -->
+            </div>
+            <div class="services-grid stagger">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="service-title">Soluciones Microsoft</h3>
+                    <p class="service-description">Implementación, migración y soporte de soluciones Microsoft para
+                        empresas de todos los tamaños.</p>
+                    <a href="paginas/soluciones-microsoft.html" class="service-link">Conocer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="service-title">Licenciamiento</h3>
+                    <p class="service-description">Asesoría especializada en licenciamiento Microsoft y gestión de
+                        software empresarial.</p>
+                    <a href="paginas/licenciamiento.html" class="service-link">Conocer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="service-title">Hardware y Software</h3>
+                    <p class="service-description">Venta de equipos de cómputo, servidores y software empresarial de
+                        alta calidad.</p>
+                    <a href="paginas/hardware-software.html" class="service-link">Conocer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="service-title">Power Platform</h3>
+                    <p class="service-description">Desarrollo de aplicaciones empresariales con Microsoft Power
+                        Platform.</p>
+                    <a href="paginas/power-platform.html" class="service-link">Conocer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+    <section id="portafolio" class="portfolio">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label"><i class="fas fa-briefcase"></i> Descarga</div>
+                <h2 class="section-title">Nuestro Portafolio</h2>
+                <p class="section-subtitle">Descargue aquí nuestro Portafolio de Servicios</p>
+            </div>
+            <div class="portfolio-content">
+                <div class="portfolio-item reveal">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3 class="portfolio-title">Brochure Profesional 2025</h3>
+                    <p class="portfolio-description">Versión optimizada de nuestro portafolio de servicios con diseño
+                        premium, listo para visualización y exportación profesional.</p>
+                    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+                        <a href="assets/portfolio-export.html" target="_blank" class="btn btn-primary portfolio-btn"
+                            style="padding: 0.8rem 2.5rem;">
+                            <i class="fas fa-eye"></i> Ver Portafolio Digital
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label"><i class="fas fa-envelope"></i> Hablemos</div>
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">Estamos listos para ayudarte con tu próximo proyecto tecnológico</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info stagger">
+                    <div class="contact-item reveal">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@consultechnic.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+57 (1) XXX-XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+57 317 854 9632</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form reveal-right">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="microsoft">Servicios Microsoft</option>
+                                <option value="licenciamiento">Licenciamiento</option>
+                                <option value="hardware">Hardware y Software</option>
+                                <option value="powerplatform">Power Platform</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto" rows="5"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/images/CT_Blanco.png" alt="Consultechnic" class="footer-logo">
+                    <p>Consultoría y Soluciones de valor en Tecnología. Transformamos empresas a través de la innovación
+                        digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Soluciones Microsoft</a></li>
+                        <li><a href="#servicios">Licenciamiento</a></li>
+                        <li><a href="#servicios">Hardware y Software</a></li>
+                        <li><a href="paginas/power-platform.html">Power Platform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/consultechnic" target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/573178549632" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span> Consultechnic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573178549632" target="_blank" rel="noopener" class="whatsapp-float"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

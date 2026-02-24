@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware y Software - Consultechnic</title>
+    <meta name="description"
+        content="Asesoría especializada en adquisición de hardware empresarial y de usuario. Equipos, servidores, partes y complementos. Consultechnic - Consultores en Tecnología">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <style>
+        /* ---- HW Hero ---- */
+        .hw-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 50%, #1DB954 100%);
+            padding-top: 100px;
+        }
+
+        .hw-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: hwGlow 7s ease-in-out infinite;
+        }
+
+        .hw-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(29, 185, 84, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: hwGlow 9s ease-in-out infinite reverse;
+        }
+
+        @keyframes hwGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+
+        .hw-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hw-hero-text .section-label {
+            margin-bottom: 1rem;
+        }
+
+        .hw-hero-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hw-hero-title .highlight {
+            background: linear-gradient(135deg, #3ED6A2, #1DB954);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hw-hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .hw-hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1DB954;
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hw-hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.4);
+        }
+
+        /* Hero visual — animated devices */
+        .hw-hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 320px;
+        }
+
+        .hw-device {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #fff;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .hw-device:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 12px 30px rgba(62, 214, 162, 0.2);
+        }
+
+        .hw-device i {
+            color: #3ED6A2;
+        }
+
+        .hw-device span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .hw-device-1 {
+            width: 110px;
+            height: 110px;
+            top: 10%;
+            left: 10%;
+            animation: hwFloat 5s ease-in-out infinite;
+        }
+
+        .hw-device-1 i {
+            font-size: 2.2rem;
+        }
+
+        .hw-device-2 {
+            width: 130px;
+            height: 130px;
+            top: 5%;
+            right: 15%;
+            animation: hwFloat 6s ease-in-out 0.5s infinite;
+        }
+
+        .hw-device-2 i {
+            font-size: 2.5rem;
+        }
+
+        .hw-device-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 25%;
+            animation: hwFloat 5.5s ease-in-out 1s infinite;
+        }
+
+        .hw-device-3 i {
+            font-size: 2rem;
+        }
+
+        .hw-device-4 {
+            width: 120px;
+            height: 120px;
+            bottom: 10%;
+            right: 10%;
+            animation: hwFloat 7s ease-in-out 1.5s infinite;
+        }
+
+        .hw-device-4 i {
+            font-size: 2.3rem;
+        }
+
+        .hw-device-center {
+            width: 90px;
+            height: 90px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(29, 185, 84, 0.2);
+            border-color: rgba(62, 214, 162, 0.3);
+            z-index: 2;
+        }
+
+        .hw-device-center i {
+            font-size: 1.8rem;
+        }
+
+        /* Connection lines */
+        .hw-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(62, 214, 162, 0.3), transparent);
+            z-index: 1;
+            animation: hwLinePulse 3s ease-in-out infinite;
+        }
+
+        .hw-line-1 {
+            width: 100px;
+            top: 40%;
+            left: 22%;
+            transform: rotate(20deg);
+        }
+
+        .hw-line-2 {
+            width: 90px;
+            top: 30%;
+            right: 30%;
+            transform: rotate(-15deg);
+            animation-delay: 0.5s;
+        }
+
+        .hw-line-3 {
+            width: 80px;
+            bottom: 35%;
+            left: 35%;
+            transform: rotate(-25deg);
+            animation-delay: 1s;
+        }
+
+        .hw-line-4 {
+            width: 110px;
+            bottom: 30%;
+            right: 25%;
+            transform: rotate(10deg);
+            animation-delay: 1.5s;
+        }
+
+        @keyframes hwFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes hwLinePulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* ---- Categories ---- */
+        .hw-categories {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .hw-cat-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hw-cat-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .hw-cat-header p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .hw-cat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hw-cat-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hw-cat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #1DB954, #3ED6A2);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .hw-cat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(15, 61, 46, 0.1);
+        }
+
+        .hw-cat-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .hw-cat-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #0F3D2E, #145A3A);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.4s;
+        }
+
+        .hw-cat-card:hover .hw-cat-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .hw-cat-icon i {
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .hw-cat-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .hw-cat-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .hw-cat-list {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+
+        .hw-cat-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #374151;
+            padding: 0.3rem 0;
+        }
+
+        .hw-cat-list i {
+            color: #1DB954;
+            font-size: 0.7rem;
+        }
+
+        /* ---- Why Us ---- */
+        .hw-why {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 100%);
+            color: #fff;
+        }
+
+        .hw-why-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hw-why-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .hw-why-header p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .hw-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hw-why-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .hw-why-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(62, 214, 162, 0.4);
+        }
+
+        .hw-why-card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(62, 214, 162, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .hw-why-card-icon i {
+            font-size: 1.4rem;
+            color: #3ED6A2;
+        }
+
+        .hw-why-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hw-why-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+        }
+
+        /* ---- Brands ---- */
+        .hw-brands {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .hw-brands-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hw-brands-header h2 {
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .hw-brands-header p {
+            color: #6b7280;
+        }
+
+        .hw-brands-track {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hw-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hw-brand:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .hw-brand i {
+            font-size: 2.5rem;
+            color: #374151;
+        }
+
+        .hw-brand span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        /* ---- Process ---- */
+        .hw-process {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .hw-process-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hw-process-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .hw-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hw-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(29, 185, 84, 0.1), rgba(62, 214, 162, 0.3), rgba(29, 185, 84, 0.1));
+        }
+
+        .hw-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hw-step-num {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .hw-step:hover .hw-step-num {
+            transform: scale(1.15);
+        }
+
+        .hw-step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.4rem;
+        }
+
+        .hw-step p {
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* ---- CTA ---- */
+        .hw-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0F3D2E 0%, #1DB954 100%);
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hw-cta::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.15), transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .hw-cta h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .hw-cta p {
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .hw-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #0F3D2E;
+            padding: 0.85rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .hw-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hw-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hw-hero-visual {
+                height: 260px;
+            }
+
+            .hw-cat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hw-process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hw-process-grid::before {
+                display: none;
+            }
+
+            .hw-device-1 {
+                top: 5%;
+                left: 5%;
+            }
+
+            .hw-device-2 {
+                top: 0%;
+                right: 5%;
+            }
+
+            .hw-device-3 {
+                bottom: 5%;
+                left: 10%;
+            }
+
+            .hw-device-4 {
+                bottom: 0%;
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="../index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li class="nav-item nav-item-dropdown">
+                        <a href="../index.html#servicios" class="nav-link active">Servicios <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="soluciones-microsoft.html" class="dropdown-item">Soluciones Microsoft</a>
+                            <a href="licenciamiento.html" class="dropdown-item">Licenciamiento</a>
+                            <a href="hardware-software.html" class="dropdown-item">Hardware & Software</a>
+                            <a href="power-platform.html" class="dropdown-item">Power Platform</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="../index.html#portafolio" class="nav-link">Portafolio</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-cta">Cotizar <i
+                                class="fas fa-arrow-right"></i></a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hw-hero">
+        <div class="container">
+            <div class="hw-hero-content">
+                <div class="hw-hero-text reveal-left">
+                    <div class="section-label"><i class="fas fa-laptop"></i> Hardware & Software</div>
+                    <h1 class="hw-hero-title">Equipos y <span class="highlight">Tecnología</span> para su Empresa</h1>
+                    <p class="hw-hero-subtitle">Asesoramos a su organización en la adquisición estratégica de equipos de
+                        cómputo, servidores, partes y complementos tecnológicos, garantizando la mejor relación
+                        costo-beneficio.</p>
+                    <a href="../index.html#contacto" class="hw-hero-cta">
+                        <i class="fas fa-headset"></i> Solicitar Cotización
+                    </a>
+                </div>
+                <div class="hw-hero-visual reveal-right">
+                    <div class="hw-device hw-device-1">
+                        <i class="fas fa-laptop"></i>
+                        <span>Portátiles</span>
+                    </div>
+                    <div class="hw-device hw-device-2">
+                        <i class="fas fa-server"></i>
+                        <span>Servidores</span>
+                    </div>
+                    <div class="hw-device hw-device-3">
+                        <i class="fas fa-desktop"></i>
+                        <span>Escritorio</span>
+                    </div>
+                    <div class="hw-device hw-device-4">
+                        <i class="fas fa-hdd"></i>
+                        <span>Almacenamiento</span>
+                    </div>
+                    <div class="hw-device hw-device-center">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="hw-line hw-line-1"></div>
+                    <div class="hw-line hw-line-2"></div>
+                    <div class="hw-line hw-line-3"></div>
+                    <div class="hw-line hw-line-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías de Productos -->
+    <section class="hw-categories">
+        <div class="container">
+            <div class="hw-cat-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-boxes"></i> Catálogo</div>
+                <h2>Nuestras Líneas de Producto</h2>
+                <p>Ofrecemos soluciones de hardware para cubrir todas las necesidades tecnológicas de su empresa, desde
+                    estaciones de trabajo individuales hasta infraestructura de servidores empresarial.</p>
+            </div>
+            <div class="hw-cat-grid stagger">
+                <div class="hw-cat-card reveal">
+                    <div class="hw-cat-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Equipos de Usuario</h3>
+                    <p>Estaciones de trabajo y equipos portátiles de alto rendimiento para la productividad diaria.</p>
+                    <ul class="hw-cat-list">
+                        <li><i class="fas fa-check"></i> Portátiles empresariales</li>
+                        <li><i class="fas fa-check"></i> PCs de escritorio</li>
+                        <li><i class="fas fa-check"></i> Estaciones de trabajo</li>
+                        <li><i class="fas fa-check"></i> Monitores profesionales</li>
+                        <li><i class="fas fa-check"></i> Periféricos y accesorios</li>
+                    </ul>
+                </div>
+                <div class="hw-cat-card reveal">
+                    <div class="hw-cat-icon"><i class="fas fa-server"></i></div>
+                    <h3>Servidores e Infraestructura</h3>
+                    <p>Soluciones de infraestructura robustas para centros de datos y operaciones críticas
+                        empresariales.</p>
+                    <ul class="hw-cat-list">
+                        <li><i class="fas fa-check"></i> Servidores torre y rack</li>
+                        <li><i class="fas fa-check"></i> Almacenamiento NAS/SAN</li>
+                        <li><i class="fas fa-check"></i> Soluciones de red</li>
+                        <li><i class="fas fa-check"></i> Switches y routers</li>
+                        <li><i class="fas fa-check"></i> UPS y respaldo eléctrico</li>
+                    </ul>
+                </div>
+                <div class="hw-cat-card reveal">
+                    <div class="hw-cat-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Partes y Complementos</h3>
+                    <p>Componentes y actualizaciones para optimizar y extender la vida útil de su infraestructura
+                        existente.</p>
+                    <ul class="hw-cat-list">
+                        <li><i class="fas fa-check"></i> Memorias RAM</li>
+                        <li><i class="fas fa-check"></i> Discos SSD y HDD</li>
+                        <li><i class="fas fa-check"></i> Procesadores</li>
+                        <li><i class="fas fa-check"></i> Tarjetas de red y gráficas</li>
+                        <li><i class="fas fa-check"></i> Fuentes de poder</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por qué elegirnos? -->
+    <section class="hw-why">
+        <div class="container">
+            <div class="hw-why-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem; color: rgba(255,255,255,0.9);"><i
+                        class="fas fa-star"></i> Diferenciadores</div>
+                <h2>¿Por qué adquirir con Consultechnic?</h2>
+                <p>No solo vendemos equipos, asesoramos a su empresa para tomar la mejor decisión tecnológica.</p>
+            </div>
+            <div class="hw-why-grid stagger">
+                <div class="hw-why-card reveal">
+                    <div class="hw-why-card-icon"><i class="fas fa-search-dollar"></i></div>
+                    <h3>Asesoría Especializada</h3>
+                    <p>Analizamos sus necesidades reales para recomendar el equipo con la mejor relación
+                        costo-beneficio.</p>
+                </div>
+                <div class="hw-why-card reveal">
+                    <div class="hw-why-card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Garantía Oficial</h3>
+                    <p>Todos los equipos incluyen garantía directa del fabricante y nuestro respaldo como partner
+                        autorizado.</p>
+                </div>
+                <div class="hw-why-card reveal">
+                    <div class="hw-why-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Configuración Incluida</h3>
+                    <p>Entregamos los equipos configurados, con sistema operativo, software y conectados a su red
+                        corporativa.</p>
+                </div>
+                <div class="hw-why-card reveal">
+                    <div class="hw-why-card-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Logística Integral</h3>
+                    <p>Gestionamos la importación, distribución e instalación de los equipos directamente en sus
+                        oficinas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas Aliadas -->
+    <section class="hw-brands">
+        <div class="container">
+            <div class="hw-brands-header reveal">
+                <h2>Marcas que distribuimos</h2>
+                <p>Trabajamos con los principales fabricantes de tecnología a nivel mundial.</p>
+            </div>
+            <div class="hw-brands-track stagger">
+                <div class="hw-brand reveal">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Microsoft</span>
+                </div>
+                <div class="hw-brand reveal">
+                    <i class="fab fa-hp"></i>
+                    <span>HP</span>
+                </div>
+                <div class="hw-brand reveal">
+                    <i class="fas fa-laptop"></i>
+                    <span>Lenovo</span>
+                </div>
+                <div class="hw-brand reveal">
+                    <i class="fas fa-desktop"></i>
+                    <span>Dell</span>
+                </div>
+                <div class="hw-brand reveal">
+                    <i class="fas fa-server"></i>
+                    <span>Cisco</span>
+                </div>
+                <div class="hw-brand reveal">
+                    <i class="fas fa-hdd"></i>
+                    <span>Western Digital</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Adquisición -->
+    <section class="hw-process">
+        <div class="container">
+            <div class="hw-process-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-tasks"></i> Proceso</div>
+                <h2>Proceso de Adquisición</h2>
+            </div>
+            <div class="hw-process-grid stagger">
+                <div class="hw-step reveal">
+                    <div class="hw-step-num">1</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Evaluamos su infraestructura actual y definimos los requerimientos técnicos necesarios.</p>
+                </div>
+                <div class="hw-step reveal">
+                    <div class="hw-step-num">2</div>
+                    <h4>Propuesta</h4>
+                    <p>Presentamos opciones con las mejores marcas y configuraciones adaptadas a su presupuesto.</p>
+                </div>
+                <div class="hw-step reveal">
+                    <div class="hw-step-num">3</div>
+                    <h4>Adquisición</h4>
+                    <p>Gestionamos la compra, importación y logística con tiempos de entrega competitivos.</p>
+                </div>
+                <div class="hw-step reveal">
+                    <div class="hw-step-num">4</div>
+                    <h4>Despliegue</h4>
+                    <p>Instalamos, configuramos y dejamos operativos los equipos en su organización.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="hw-cta">
+        <div class="container">
+            <div class="reveal">
+                <h2>¿Necesita renovar su infraestructura?</h2>
+                <p>Contáctenos para una asesoría personalizada. Nuestro equipo le ayudará a encontrar la solución de
+                    hardware perfecta para su empresa.</p>
+                <a href="../index.html#contacto" class="hw-cta-btn">
+                    <i class="fas fa-phone-alt"></i> Solicitar Asesoría
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="footer-logo">
+                    <p>Consultoría y Soluciones de valor en Tecnología. Transformamos empresas a través de la innovación
+                        digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="soluciones-microsoft.html">Soluciones Microsoft</a></li>
+                        <li><a href="licenciamiento.html">Licenciamiento</a></li>
+                        <li><a href="hardware-software.html">Hardware y Software</a></li>
+                        <li><a href="power-platform.html">Power Platform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="../index.html#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="../index.html#portafolio">Portafolio</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/consultechnic" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/573178549632" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span> Consultechnic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573178549632" target="_blank" rel="noopener" class="whatsapp-float"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

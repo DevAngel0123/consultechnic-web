@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenciamiento Microsoft - Consultechnic</title>
+    <meta name="description"
+        content="Licenciamiento de software genuino Microsoft. Programas CSP, OEM, OVS y ESD para garantizar sistemas seguros, legales y actualizados. Consultechnic - Consultores en Tecnología">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <style>
+        /* ---- Licensing Hero ---- */
+        .lic-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 50%, #1DB954 100%);
+            padding-top: 100px;
+        }
+
+        .lic-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: licPulse 6s ease-in-out infinite;
+        }
+
+        .lic-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(29, 185, 84, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: licPulse 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes licPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        .lic-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lic-hero-text .section-label {
+            margin-bottom: 1rem;
+        }
+
+        .lic-hero-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .lic-hero-title .highlight {
+            background: linear-gradient(135deg, #3ED6A2, #1DB954);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lic-hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .lic-hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1DB954;
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .lic-hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.4);
+        }
+
+        .lic-hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lic-shield-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+
+        .lic-shield-ring {
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(62, 214, 162, 0.2);
+            border-radius: 50%;
+            animation: licRingSpin 20s linear infinite;
+        }
+
+        .lic-shield-ring:nth-child(2) {
+            inset: 20px;
+            border-color: rgba(62, 214, 162, 0.15);
+            animation-duration: 15s;
+            animation-direction: reverse;
+        }
+
+        .lic-shield-ring:nth-child(3) {
+            inset: 40px;
+            border-color: rgba(62, 214, 162, 0.1);
+            animation-duration: 25s;
+        }
+
+        @keyframes licRingSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .lic-shield-ring::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: #3ED6A2;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(62, 214, 162, 0.6);
+        }
+
+        .lic-shield-center {
+            position: absolute;
+            inset: 60px;
+            background: rgba(62, 214, 162, 0.1);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(62, 214, 162, 0.2);
+        }
+
+        .lic-shield-center i {
+            font-size: 3rem;
+            color: #3ED6A2;
+            margin-bottom: 0.5rem;
+        }
+
+        .lic-shield-center span {
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .lic-float-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: licFloat 4s ease-in-out infinite;
+        }
+
+        .lic-float-badge i {
+            color: #3ED6A2;
+        }
+
+        .lic-float-badge:nth-child(5) {
+            top: 10%;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .lic-float-badge:nth-child(6) {
+            bottom: 15%;
+            right: -20px;
+            animation-delay: 1s;
+        }
+
+        .lic-float-badge:nth-child(7) {
+            bottom: 5%;
+            left: -20px;
+            animation-delay: 2s;
+        }
+
+        @keyframes licFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* ---- Why Legal Software ---- */
+        .lic-why {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .lic-why-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .lic-why-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .lic-why-header p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .lic-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lic-why-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lic-why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #1DB954, #3ED6A2);
+            opacity: 0.4;
+            transition: opacity 0.3s;
+        }
+
+        .lic-why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(15, 61, 46, 0.1);
+        }
+
+        .lic-why-card:hover::before {
+            opacity: 1;
+        }
+
+        .lic-why-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #0F3D2E, #145A3A);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .lic-why-icon i {
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .lic-why-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .lic-why-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ---- Risks Animated Counter ---- */
+        .lic-risks {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 100%);
+            color: #fff;
+        }
+
+        .lic-risks-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .lic-risks-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .lic-risks-header p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .lic-risks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lic-risk-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .lic-risk-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(62, 214, 162, 0.4);
+        }
+
+        .lic-risk-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .lic-risk-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .lic-risk-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.5;
+        }
+
+        /* ---- Licensing Programs ---- */
+        .lic-programs {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .lic-programs-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .lic-programs-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .lic-programs-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .lic-programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .lic-program {
+            background: #f9fafb;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .lic-program:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(15, 61, 46, 0.1);
+        }
+
+        .lic-program-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .lic-program h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .lic-program p {
+            color: #6b7280;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .lic-program-features {
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .lic-program-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #374151;
+            margin-bottom: 0.4rem;
+        }
+
+        .lic-program-features i {
+            color: #1DB954;
+            margin-top: 3px;
+            font-size: 0.7rem;
+        }
+
+        /* ---- Process Steps ---- */
+        .lic-process {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .lic-process-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .lic-process-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .lic-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .lic-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(29, 185, 84, 0.1), rgba(62, 214, 162, 0.3), rgba(29, 185, 84, 0.1));
+        }
+
+        .lic-process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lic-step-num {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .lic-process-step:hover .lic-step-num {
+            transform: scale(1.15);
+        }
+
+        .lic-process-step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.4rem;
+        }
+
+        .lic-process-step p {
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* ---- CTA ---- */
+        .lic-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0F3D2E 0%, #1DB954 100%);
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lic-cta::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.15), transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .lic-cta h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .lic-cta p {
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .lic-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #0F3D2E;
+            padding: 0.85rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .lic-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .lic-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .lic-shield-container {
+                width: 220px;
+                height: 220px;
+                margin: 0 auto;
+            }
+
+            .lic-float-badge {
+                display: none;
+            }
+
+            .lic-process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lic-process-grid::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="../index.html#inicio" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item nav-item-dropdown">
+                        <a href="../index.html#servicios" class="nav-link active">Servicios <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="soluciones-microsoft.html" class="dropdown-item">Soluciones Microsoft</a>
+                            <a href="licenciamiento.html" class="dropdown-item">Licenciamiento</a>
+                            <a href="hardware-software.html" class="dropdown-item">Hardware & Software</a>
+                            <a href="power-platform.html" class="dropdown-item">Power Platform</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#nosotros" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#portafolio" class="nav-link">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contacto" class="nav-cta">Cotizar <i class="fas fa-arrow-right"></i></a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="lic-hero">
+        <div class="container">
+            <div class="lic-hero-content">
+                <div class="lic-hero-text reveal-left">
+                    <div class="section-label"><i class="fas fa-key"></i> Licenciamiento</div>
+                    <h1 class="lic-hero-title">Software <span class="highlight">Legal</span> para Empresas Seguras</h1>
+                    <p class="lic-hero-subtitle">Garantizamos que su organización opere con software genuino Microsoft,
+                        cumpliendo la normativa legal y protegiendo su inversión tecnológica con los mejores esquemas de
+                        licenciamiento.</p>
+                    <a href="../index.html#contacto" class="lic-hero-cta">
+                        <i class="fas fa-file-contract"></i> Solicitar Asesoría
+                    </a>
+                </div>
+                <div class="lic-hero-visual reveal-right">
+                    <div class="lic-shield-container">
+                        <div class="lic-shield-ring"></div>
+                        <div class="lic-shield-ring"></div>
+                        <div class="lic-shield-ring"></div>
+                        <div class="lic-shield-center">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Genuino</span>
+                        </div>
+                        <div class="lic-float-badge">
+                            <i class="fas fa-check-circle"></i> Cumplimiento Legal
+                        </div>
+                        <div class="lic-float-badge">
+                            <i class="fas fa-lock"></i> 100% Seguro
+                        </div>
+                        <div class="lic-float-badge">
+                            <i class="fab fa-microsoft"></i> Partner
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por qué Software Legal? -->
+    <section class="lic-why">
+        <div class="container">
+            <div class="lic-why-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-balance-scale"></i> Importancia
+                </div>
+                <h2>¿Por qué es fundamental el software legal?</h2>
+                <p>El uso de software sin licencia expone a su empresa a riesgos legales, de seguridad y operativos que
+                    pueden afectar directamente su competitividad.</p>
+            </div>
+            <div class="lic-why-grid stagger">
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Cumplimiento Normativo</h3>
+                    <p>Evite sanciones legales y multas por uso de software pirata. La Ley 603 de 2000 en Colombia
+                        obliga a las empresas a reportar el uso legal del software.</p>
+                </div>
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad Garantizada</h3>
+                    <p>El software genuino recibe actualizaciones de seguridad constantes, protegiendo su
+                        infraestructura contra vulnerabilidades y ciberataques.</p>
+                </div>
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Rendimiento Óptimo</h3>
+                    <p>Las licencias originales garantizan el rendimiento completo del software, sin limitaciones ni
+                        comportamientos inestables.</p>
+                </div>
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Soporte Técnico Oficial</h3>
+                    <p>Acceso directo al soporte técnico de Microsoft para resolver incidencias de forma rápida y
+                        eficiente.</p>
+                </div>
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Productividad Empresarial</h3>
+                    <p>Herramientas actualizadas permite a sus equipos trabajar con las últimas funcionalidades,
+                        mejorando la productividad y colaboración.</p>
+                </div>
+                <div class="lic-why-card reveal">
+                    <div class="lic-why-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Imagen Corporativa</h3>
+                    <p>Operar con software legal fortalece la reputación de su empresa ante clientes, socios y entidades
+                        regulatorias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Riesgos del Software Ilegal -->
+    <section class="lic-risks">
+        <div class="container">
+            <div class="lic-risks-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem; color: rgba(255,255,255,0.9);"><i
+                        class="fas fa-exclamation-triangle"></i> Riesgos</div>
+                <h2>Riesgos del software sin licencia</h2>
+                <p>Las consecuencias de utilizar software ilegal pueden ser devastadoras para su negocio.</p>
+            </div>
+            <div class="lic-risks-grid stagger">
+                <div class="lic-risk-card reveal">
+                    <div class="lic-risk-icon">⚖️</div>
+                    <h3>Multas y Sanciones</h3>
+                    <p>Demandas por infracción de derechos de autor con multas de hasta 1,000 salarios mínimos.</p>
+                </div>
+                <div class="lic-risk-card reveal">
+                    <div class="lic-risk-icon">🦠</div>
+                    <h3>Malware y Virus</h3>
+                    <p>El software pirata es el principal vector de entrada de malware, ransomware y spyware
+                        corporativo.</p>
+                </div>
+                <div class="lic-risk-card reveal">
+                    <div class="lic-risk-icon">📉</div>
+                    <h3>Pérdida de Datos</h3>
+                    <p>Sin actualizaciones de seguridad, su información crítica está expuesta a robos y pérdidas
+                        irreversibles.</p>
+                </div>
+                <div class="lic-risk-card reveal">
+                    <div class="lic-risk-icon">🚫</div>
+                    <h3>Pérdida de Confianza</h3>
+                    <p>Clientes y socios pierden la confianza en empresas que no cumplen con la legalidad del software.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas de Licenciamiento -->
+    <section class="lic-programs">
+        <div class="container">
+            <div class="lic-programs-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-certificate"></i> Programas
+                </div>
+                <h2>Esquemas de Licenciamiento</h2>
+                <p>Ofrecemos los principales programas de licenciamiento Microsoft adaptados a las necesidades de cada
+                    empresa.</p>
+            </div>
+            <div class="lic-programs-grid stagger">
+                <div class="lic-program reveal">
+                    <div class="lic-program-badge">CSP</div>
+                    <h3>Cloud Solution Provider</h3>
+                    <p>Suscripciones mensuales o anuales flexibles para Microsoft 365, Azure y Dynamics 365.</p>
+                    <ul class="lic-program-features">
+                        <li><i class="fas fa-check"></i> Pago por uso mensual</li>
+                        <li><i class="fas fa-check"></i> Escalabilidad inmediata</li>
+                        <li><i class="fas fa-check"></i> Soporte directo del partner</li>
+                    </ul>
+                </div>
+                <div class="lic-program reveal">
+                    <div class="lic-program-badge">OEM</div>
+                    <h3>Original Equipment Manufacturer</h3>
+                    <p>Licencias preinstaladas que vienen integradas con el hardware nuevo adquirido.</p>
+                    <ul class="lic-program-features">
+                        <li><i class="fas fa-check"></i> Vinculado al equipo</li>
+                        <li><i class="fas fa-check"></i> Costo reducido</li>
+                        <li><i class="fas fa-check"></i> Activación inmediata</li>
+                    </ul>
+                </div>
+                <div class="lic-program reveal">
+                    <div class="lic-program-badge">OVS</div>
+                    <h3>Open Value Subscription</h3>
+                    <p>Licenciamiento por volumen ideal para organizaciones educativas y gubernamentales.</p>
+                    <ul class="lic-program-features">
+                        <li><i class="fas fa-check"></i> Precios por volumen</li>
+                        <li><i class="fas fa-check"></i> Software Assurance incluido</li>
+                        <li><i class="fas fa-check"></i> Actualizaciones garantizadas</li>
+                    </ul>
+                </div>
+                <div class="lic-program reveal">
+                    <div class="lic-program-badge">ESD</div>
+                    <h3>Electronic Software Delivery</h3>
+                    <p>Licencias digitales con descarga inmediata, sin necesidad de medios físicos.</p>
+                    <ul class="lic-program-features">
+                        <li><i class="fas fa-check"></i> Entrega digital instantánea</li>
+                        <li><i class="fas fa-check"></i> Sin inventario físico</li>
+                        <li><i class="fas fa-check"></i> Licencia perpetua</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="lic-process">
+        <div class="container">
+            <div class="lic-process-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-tasks"></i> Proceso</div>
+                <h2>¿Cómo trabajamos?</h2>
+            </div>
+            <div class="lic-process-grid stagger">
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">1</div>
+                    <h4>Auditoría</h4>
+                    <p>Evaluamos el estado actual de sus licencias e identificamos brechas de cumplimiento.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">2</div>
+                    <h4>Recomendación</h4>
+                    <p>Diseñamos el plan de licenciamiento más rentable según su perfil empresarial.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">3</div>
+                    <h4>Implementación</h4>
+                    <p>Gestionamos la adquisición, activación y despliegue de todas sus licencias.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">4</div>
+                    <h4>Gestión Continua</h4>
+                    <p>Monitoreamos renovaciones, optimizamos costos y aseguramos cumplimiento permanente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="lic-cta">
+        <div class="container">
+            <div class="reveal">
+                <h2>¿Listo para legalizar su software?</h2>
+                <p>Contáctenos hoy para una auditoría gratuita de licenciamiento. Nuestro equipo le ayudará a encontrar
+                    el esquema perfecto para su empresa.</p>
+                <a href="../index.html#contacto" class="lic-cta-btn">
+                    <i class="fas fa-phone-alt"></i> Contáctenos Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="footer-logo">
+                    <p>Consultoría y Soluciones de valor en Tecnología. Transformamos empresas a través de la innovación
+                        digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="soluciones-microsoft.html">Soluciones Microsoft</a></li>
+                        <li><a href="licenciamiento.html">Licenciamiento</a></li>
+                        <li><a href="../index.html#servicios">Hardware y Software</a></li>
+                        <li><a href="power-platform.html">Power Platform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="../index.html#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="../index.html#portafolio">Portafolio</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/consultechnic" target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/consultechnic" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/573178549632" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span> Consultechnic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573178549632" target="_blank" rel="noopener" class="whatsapp-float"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

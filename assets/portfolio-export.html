@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Servicios - Consultechnic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0F3D2E;
+            --primary-light: #1DB954;
+            --accent: #3ED6A2;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background: #fff;
+            line-height: 1.5;
+        }
+
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+
+        .page {
+            width: 297mm;
+            height: 210mm;
+            padding: 15mm 20mm 28mm 20mm;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+            border: 1px solid #eee;
+            background: #fff;
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                border: none;
+                width: 297mm;
+                height: 210mm;
+                box-shadow: none;
+            }
+
+            .print-btn {
+                display: none !important;
+            }
+
+            title {
+                display: none;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        /* ---- Print Button ---- */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gradient-accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                padding: 0;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            .print-btn span {
+                display: none;
+            }
+
+            .print-btn i {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+        }
+
+        @media print {
+            .print-btn {
+                display: none !important;
+            }
+        }
+
+        /* ---- COVER PAGE ---- */
+        .cover {
+            background: radial-gradient(circle at 100% 0%, #0F3D2E 0%, #0a291f 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cover-logo {
+            width: 300px;
+            margin-bottom: 3rem;
+        }
+
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .cover-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 4rem;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 20mm;
+            width: 100%;
+            left: 0;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* ---- COMMON ELEMENTS ---- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+        }
+
+        .header img {
+            height: 60px;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 20mm;
+            right: 20mm;
+            border-top: 1px solid var(--gray-100);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .section-label {
+            background: rgba(29, 185, 84, 0.1);
+            color: var(--primary-light);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* ---- GRID LAYOUTS ---- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            flex: 1;
+        }
+
+        .card {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--gray-100);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .feature-list li i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* ---- DECORATIONS ---- */
+        .accent-blob {
+            position: absolute;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+
+        .blob-1 {
+            top: -10%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> <span>Guardar esta página como PDF</span>
+    </button>
+
+    <!-- PORTADA -->
+    <div class="page cover">
+        <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="cover-logo">
+        <h1 class="cover-title">Portafolio de Servicios</h1>
+        <p class="cover-subtitle">Consultoría y Soluciones de Valor en Tecnología</p>
+        <div class="cover-footer">
+            <span class="current-year"></span> | www.consultechnic.com | Colombia
+        </div>
+    </div>
+
+    <!-- QUIENES SOMOS (Updated) -->
+    <div class="page">
+        <div class="accent-blob blob-1"></div>
+        <div class="header">
+            <img src="../assets/images/CT_Blanco.png" alt="Logo"
+                style="filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(2321%) hue-rotate(124deg) brightness(92%) contrast(92%);">
+        </div>
+        <div class="grid-2">
+            <div>
+                <span class="section-label">Sobre Nosotros</span>
+                <h2 class="page-title" style="margin-bottom: 1.5rem;">Expertos en Transformación Digital</h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    En <strong>Consultechnic</strong>, unimos la experiencia técnica con una visión estratégica para
+                    ayudar a las empresas a navegar el complejo panorama tecnológico actual.
+                </p>
+                <div class="card"
+                    style="margin-bottom: 1.5rem; background: rgba(29, 185, 84, 0.05); border-color: var(--accent);">
+                    <h3>Nuestra Propuesta de Valor</h3>
+                    <p>No solo entregamos tecnología; construimos soluciones que generan impacto real en la eficiencia y
+                        rentabilidad de su negocio, acompañándolo en cada fase del ciclo de vida digital.</p>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                <div class="card" style="padding: 1rem 1.5rem;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;"><i class="fas fa-check-circle"
+                            style="color: var(--primary-light);"></i> Experiencia Certificada</h3>
+                    <p style="font-size: 0.9rem; margin: 0;">Consultores certificados en plataformas líderes del
+                        mercado.</p>
+                </div>
+                <div class="card" style="padding: 1rem 1.5rem;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;"><i class="fas fa-rocket"
+                            style="color: var(--primary-light);"></i> Innovación Ágil</h3>
+                    <p style="font-size: 0.9rem; margin: 0;">Metodologías iterativas para despliegues rápidos y
+                        escalables.</p>
+                </div>
+                <div class="card" style="padding: 1rem 1.5rem;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;"><i class="fas fa-shield-alt"
+                            style="color: var(--primary-light);"></i> Seguridad Integral</h3>
+                    <p style="font-size: 0.9rem; margin: 0;">Blindaje de activos digitales bajo estándares
+                        internacionales.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-social" style="font-size: 1.5rem;">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>www.consultechnic.com | <span class="current-year"></span></div>
+        </div>
+    </div>
+
+    <!-- PROPUESTA DE VALOR / DIFERENCIADORES -->
+    <div class="page" style="background: var(--primary); color: #fff;">
+        <div class="header" style="border-color: rgba(255,255,255,0.2);">
+            <h2 class="page-title" style="color: #fff;">¿Por qué Consultechnic?</h2>
+            <img src="../assets/images/CT_Blanco.png" alt="Logo">
+        </div>
+        <div class="grid-2">
+            <div class="card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                <span class="section-label" style="background: var(--accent); color: var(--primary);">EL
+                    DIFERENCIADOR</span>
+                <h3 style="color: #fff; font-size: 2rem; margin-top: 1rem;">Acompañamiento Estratégico</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">A diferencia de proveedores tradicionales,
+                    nos convertimos en su aliado tecnológico. Analizamos el ROI de cada inversión y aseguramos que el
+                    software y hardware trabajen en perfecta armonía.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-star" style="color: var(--accent);"></i> Consultoría Proactiva 24/7</li>
+                    <li><i class="fas fa-star" style="color: var(--accent);"></i> Optimización de Costos Ocultos</li>
+                    <li><i class="fas fa-star" style="color: var(--accent);"></i> Transferencia de Conocimiento</li>
+                </ul>
+            </div>
+            <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 1.5rem;">
+                <div class="card" style="background: rgba(62, 214, 162, 0.1); border-color: rgba(62, 214, 162, 0.2);">
+                    <h3 style="color: var(--accent);"><i class="fas fa-handshake"></i> Alianzas Globales</h3>
+                    <p style="color: #fff; margin: 0;">Partners autorizados de Microsoft, HP, Dell y Lenovo.
+                        Garantizamos productos 100% genuinos y soporte directo de fábrica.</p>
+                </div>
+                <div class="card" style="background: rgba(62, 214, 162, 0.1); border-color: rgba(62, 214, 162, 0.2);">
+                    <h3 style="color: var(--accent);"><i class="fas fa-chart-line"></i> Escalabilidad Real</h3>
+                    <p style="color: #fff; margin: 0;">Diseñamos hoy pensando en su crecimiento de mañana. Arquitecturas
+                        modulares que evolucionan con su negocio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" style="border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6);">
+            <div class="footer-social" style="font-size: 1.5rem;">
+                <a href="#" style="color: #fff;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>www.consultechnic.com | <span class="current-year"></span></div>
+        </div>
+    </div>
+
+    <!-- SOLUCIONES MICROSOFT -->
+    <div class="page">
+        <div class="header">
+            <h2 class="page-title">Soluciones Microsoft</h2>
+            <img src="../assets/images/CT_Blanco.png" alt="Logo"
+                style="filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(2321%) hue-rotate(124deg) brightness(92%) contrast(92%);">
+        </div>
+        <div class="grid-2">
+            <div class="card">
+                <span class="section-label">Productividad & Nube</span>
+                <i class="fab fa-microsoft card-icon" style="font-size: 3rem;"></i>
+                <h3>Microsoft 365 & Azure</h3>
+                <p>Implementación y optimización de entornos de colaboración y servicios en la nube.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-chevron-right"></i> Migración a la Nube</li>
+                    <li><i class="fas fa-chevron-right"></i> Teams & SharePoint</li>
+                    <li><i class="fas fa-chevron-right"></i> Azure Infrastructure</li>
+                    <li><i class="fas fa-chevron-right"></i> Gestión de Identidades</li>
+                </ul>
+            </div>
+            <div class="card">
+                <span class="section-label">Seguridad Avanzada</span>
+                <i class="fas fa-user-shield card-icon" style="font-size: 3rem;"></i>
+                <h3>Security & Compliance</h3>
+                <p>Protección integral de sus datos y cumplimiento de normativas globales.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-chevron-right"></i> Arquitectura Zero Trust</li>
+                    <li><i class="fas fa-chevron-right"></i> Defender for Endpoint</li>
+                    <li><i class="fas fa-chevron-right"></i> Protección de la Información</li>
+                    <li><i class="fas fa-chevron-right"></i> Consultoría de Seguridad</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-social" style="font-size: 1.5rem;">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>www.consultechnic.com | <span class="current-year"></span></div>
+        </div>
+    </div>
+
+    <!-- POWER PLATFORM (Enhanced) -->
+    <div class="page" style="background: #e9f7ef;">
+        <div class="header">
+            <h2 class="page-title">Power Platform & AI</h2>
+            <img src="../assets/images/CT_Blanco.png" alt="Logo"
+                style="filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(2321%) hue-rotate(124deg) brightness(92%) contrast(92%);">
+        </div>
+        <div class="grid-2">
+            <div>
+                <span class="section-label">La Revolución Low-Code</span>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Reducimos los tiempos de desarrollo de
+                    meses a semanas, permitiendo que su empresa responda al mercado con agilidad.</p>
+                <div style="display: grid; gap: 1rem;">
+                    <div class="card" style="background: #fff; padding: 1.2rem;">
+                        <h4 style="color: var(--primary);"><i class="fas fa-robot"></i> Inteligencia Artificial</h4>
+                        <p style="font-size: 0.85rem; margin: 0;">Integración de Modelos de Lenguaje y Copilot para
+                            automatizar decisiones y generación de contenido.</p>
+                    </div>
+                    <div class="card" style="background: #fff; padding: 1.2rem;">
+                        <h4 style="color: var(--primary);"><i class="fas fa-mobile-alt"></i> Apps Empresariales</h4>
+                        <p style="font-size: 0.85rem; margin: 0;">Soluciones móviles nativas para fuerza de ventas,
+                            inventarios y gestión en campo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card"
+                style="background: #fff; border-color: var(--accent); align-items: center; text-align: center;">
+                <h3 style="margin-top: 1rem;">Impacto en el ROI</h3>
+                <div style="font-size: 3rem; font-weight: 800; color: var(--primary-light); margin: 1rem 0;">+70%</div>
+                <p>En la eficiencia operativa mediante la automatización de procesos repetitivos con Power Automate e IA
+                    Sugerida.</p>
+                <img src="../assets/images/powerplatform.png" alt="PP" style="width: 150px; margin-top: 1rem;">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-social" style="font-size: 1.5rem;">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>www.consultechnic.com | <span class="current-year"></span></div>
+        </div>
+    </div>
+
+    <!-- LICENCIAMIENTO & HARDWARE (Expanded) -->
+    <div class="page">
+        <div class="header">
+            <h2 class="page-title">Licenciamiento & Hardware</h2>
+            <img src="../assets/images/CT_Blanco.png" alt="Logo"
+                style="filter: brightness(0) saturate(100%) invert(20%) sepia(21%) saturate(2321%) hue-rotate(124deg) brightness(92%) contrast(92%);">
+        </div>
+        <div class="grid-2">
+            <div class="card">
+                <span class="section-label">Legalidad y Cumplimiento</span>
+                <h3 style="font-size: 1.3rem;">Licenciamiento Estratégico</h3>
+                <p style="font-size: 0.9rem;">Evite riesgos legales y multas por software no genuino. Analizamos sus
+                    necesidades para optimizar la inversión en Microsoft CSP, SPLA y Academic.</p>
+                <div style="background: #fff; padding: 1rem; border-radius: 12px; border: 1px dashed var(--accent);">
+                    <small><strong>Mitigación de Riesgos:</strong> Aseguramos que cada peso invertido en licencias sea
+                        aprovechado al máximo, eliminando software ocioso.</small>
+                </div>
+            </div>
+            <div class="card">
+                <span class="section-label">Herramientas de Alto Nivel</span>
+                <h3 style="font-size: 1.3rem;">Servidores & Estaciones</h3>
+                <p style="font-size: 0.9rem;">Suministro de hardware de grado empresarial (Servers, Storage, Networking)
+                    con configuración y garantía directa.</p>
+                <ul class="feature-list" style="font-size: 0.85rem;">
+                    <li><i class="fas fa-laptop" style="color: var(--accent);"></i> Soluciones de Cómputo para Usuario
+                        Final</li>
+                    <li><i class="fas fa-network-wired" style="color: var(--accent);"></i> Infraestructura de Red
+                        Robusta</li>
+                    <li><i class="fas fa-server" style="color: var(--accent);"></i> Centro de Datos & Backup Físico</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-social" style="font-size: 1.5rem;">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div>www.consultechnic.com | <span class="current-year"></span></div>
+        </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="page cover" style="background: var(--primary); text-align: left; align-items: start;">
+        <div style="max-width: 800px;">
+            <span class="section-label" style="background: rgba(255,255,255,0.1); color: #fff;">¿Listo para
+                comenzar?</span>
+            <h2 class="cover-title" style="font-size: 4rem;">Hablemos de su próximo proyecto.</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem;">
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-envelope"></i> Email</h3>
+                    <p style="font-size: 1.2rem;">info@consultechnic.com</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;"><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+                    <p style="font-size: 1.2rem;">+57 317 854 9632</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-map-marker-alt"></i>
+                        Ubicación</h3>
+                    <p style="font-size: 1.2rem;">Bogotá, Colombia</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-globe"></i> Web</h3>
+                    <p style="font-size: 1.2rem;">www.consultechnic.com</p>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 20mm; right: 20mm;">
+            <img src="../assets/images/CT_Blanco.png" alt="Logo" style="height: 80px; opacity: 0.5;">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.current-year').forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

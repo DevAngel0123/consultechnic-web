@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Microsoft - Consultechnic</title>
+    <meta name="description"
+        content="Soluciones Microsoft especializadas: Microsoft 365, Azure, Azure OpenAI y servicios en la nube. Consultechnic - Consultores en Tecnología">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <style>
+        /* ---- Microsoft Hero ---- */
+        .ms-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0F3D2E 0%, #145A3A 50%, #1DB954 100%);
+            padding-top: 100px;
+        }
+
+        .ms-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(62, 214, 162, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: msPulse 7s ease-in-out infinite;
+        }
+
+        @keyframes msPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .ms-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ms-hero-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .ms-hero-title .highlight {
+            background: linear-gradient(135deg, #3ED6A2, #1DB954);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ms-hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .ms-hero-visual {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .ms-image-container {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            transform: rotateY(-10deg);
+            transition: transform 0.5s;
+        }
+
+        .ms-image-container:hover {
+            transform: rotateY(0deg);
+        }
+
+        /* ---- M365 Section ---- */
+        .ms-services {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .ms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .ms-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ms-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(15, 61, 46, 0.1);
+        }
+
+        .ms-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #1DB954;
+        }
+
+        .ms-icon {
+            font-size: 2.5rem;
+            color: #1DB954;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ---- Process Steps (Consistent with Licenciamiento) ---- */
+        .lic-process {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .lic-process-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .lic-process-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .lic-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .lic-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(29, 185, 84, 0.05), rgba(62, 214, 162, 0.4), rgba(29, 185, 84, 0.05));
+        }
+
+        .lic-process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lic-step-num {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1DB954, #3ED6A2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 25px rgba(29, 185, 84, 0.3);
+            transition: all 0.4s ease;
+            border: 4px solid #fff;
+        }
+
+        .lic-process-step:hover .lic-step-num {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(29, 185, 84, 0.4);
+        }
+
+        .lic-step-icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #1DB954;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lic-process-step h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.8rem;
+        }
+
+        .lic-process-step p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        /* ---- Premium Consistency Redesign ---- */
+        .ms-premium-gradient {
+            padding: 100px 0;
+            background: radial-gradient(circle at 100% 0%, #0F3D2E 0%, #0a291f 100%);
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .ms-premium-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(rgba(62, 214, 162, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.4;
+        }
+
+        .ms-glass-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ms-glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 35px;
+            padding: 4rem 3rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .ms-glass-card:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(62, 214, 162, 0.3);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .ms-glass-icon {
+            font-size: 3rem;
+            color: #3ED6A2;
+            margin-bottom: 2rem;
+            display: inline-block;
+            text-shadow: 0 0 20px rgba(62, 214, 162, 0.3);
+        }
+
+        .ms-glass-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .ms-glass-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .ms-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .ms-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .ms-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #1DB954;
+        }
+
+        @media (max-width: 992px) {
+            .ms-glass-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ms-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .ms-image-container {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="logo">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="../index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li class="nav-item nav-item-dropdown">
+                        <a href="../index.html#servicios" class="nav-link active">Servicios <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="soluciones-microsoft.html" class="dropdown-item">Soluciones Microsoft</a>
+                            <a href="licenciamiento.html" class="dropdown-item">Licenciamiento</a>
+                            <a href="hardware-software.html" class="dropdown-item">Hardware & Software</a>
+                            <a href="power-platform.html" class="dropdown-item">Power Platform</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="../index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="../index.html#portafolio" class="nav-link">Portafolio</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="../index.html#contacto" class="nav-cta">Cotizar <i
+                                class="fas fa-arrow-right"></i></a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="ms-hero">
+        <div class="container">
+            <div class="ms-hero-content">
+                <div class="ms-hero-text reveal-left">
+                    <div class="section-label"><i class="fab fa-microsoft"></i> Ecosistema Microsoft</div>
+                    <h1 class="ms-hero-title">Potencie su Empresa con <span class="highlight">Tecnología</span> Cloud
+                    </h1>
+                    <p class="ms-hero-subtitle">Transformamos su organización con el ecosistema más completo de
+                        soluciones en la nube, optimizando la colaboración, seguridad y escalabilidad.</p>
+                </div>
+                <div class="ms-hero-visual reveal-right">
+                    <div class="ms-image-container">
+                        <img src="../assets/images/MICROSOFT365.png" alt="Microsoft 365"
+                            style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content (All Services Unified) -->
+    <section class="ms-services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" style="margin-bottom: 1rem;"><i class="fas fa-cloud"></i> Innovación</div>
+                <h2>Soluciones de Valor en la Nube</h2>
+            </div>
+            <div class="ms-grid stagger">
+                <!-- Card 1 -->
+                <div class="ms-card reveal">
+                    <div class="ms-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>Microsoft 365</h3>
+                    <p>Modernice su entorno de trabajo con herramientas líderes en productividad. Gestión completa de
+                        migración, adopción de Copilot y seguridad avanzada.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="ms-card reveal">
+                    <div class="ms-icon"><i class="fas fa-server"></i></div>
+                    <h3>Microsoft Azure</h3>
+                    <p>Infraestructura escalable para desplegar sus aplicaciones. IaaS, PaaS y soluciones de continuidad
+                        de negocio con centros de datos globales.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="ms-card reveal">
+                    <div class="ms-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Implementación de Azure OpenAI y servicios cognitivos para transformar sus datos en decisiones
+                        inteligentes y procesos automáticos.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="ms-card reveal">
+                    <div class="ms-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad Avanzada</h3>
+                    <p>Protección perimetral, gestión de identidades y cumplimiento normativo para garantizar la
+                        integridad de su información corporativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud & Security Featured Section -->
+    <section class="ms-premium-gradient">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 5rem;">
+                <div class="section-label"
+                    style="background: rgba(62, 214, 162, 0.1); color: #3ED6A2; border-color: rgba(62, 214, 162, 0.2);">
+                    <i class="fas fa-shield-alt"></i> Máxima Confianza
+                </div>
+                <h2 style="color: #fff;">Infraestructura y Seguridad Integral</h2>
+                <p style="color: rgba(255,255,255,0.7);">Soluciones robustas diseñadas para proteger sus
+                    activos más valiosos y escalar según su crecimiento.</p>
+            </div>
+            <div class="ms-glass-grid stagger">
+                <div class="ms-glass-card reveal">
+                    <div class="ms-glass-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Azure & Nube Híbrida</h3>
+                    <p>Diseñamos arquitecturas en la nube que combinan flexibilidad, redundancia y un
+                        rendimiento superior para su infraestructura crítica.</p>
+                    <ul class="ms-list">
+                        <li>Migración a la Nube</li>
+                        <li>Gestión de Servidores Virtuales</li>
+                        <li>Backup & Disaster Recovery</li>
+                    </ul>
+                </div>
+                <div class="ms-glass-card reveal">
+                    <div class="ms-glass-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Seguridad y Cumplimiento</h3>
+                    <p>Implementamos marcos de seguridad avanzados para proteger su información contra
+                        amenazas modernas y garantizar el cumplimiento normativo.</p>
+                    <ul class="ms-list">
+                        <li>Zero Trust Architecture</li>
+                        <li>Gestión de Identidades</li>
+                        <li>Protección de Datos Sensibles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (Simplified consistent) -->
+    <section class="lic-process" style="background: #fff;">
+        <div class="container">
+            <div class="lic-process-header reveal">
+                <h2>Nuestra Ruta de Implementación</h2>
+            </div>
+            <div class="lic-process-grid stagger">
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        1
+                        <div class="lic-step-icon"><i class="fas fa-clipboard-check"></i></div>
+                    </div>
+                    <h4>Evaluación</h4>
+                    <p>Análisis de Readiness y arquitectura personalizada para su infraestructura.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        2
+                        <div class="lic-step-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    </div>
+                    <h4>Migración</h4>
+                    <p>Despliegue seguro y controlado sin interrupción de sus servicios críticos.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        3
+                        <div class="lic-step-icon"><i class="fas fa-user-graduate"></i></div>
+                    </div>
+                    <h4>Adopción</h4>
+                    <p>Programas de capacitación y entrenamiento técnico para maximizar el ROI.</p>
+                </div>
+                <div class="lic-process-step reveal">
+                    <div class="lic-step-num">
+                        4
+                        <div class="lic-step-icon"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <h4>Optimización</h4>
+                    <p>Mejora continua, gestión de licencias y soporte proactivo 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/images/CT_Blanco.png" alt="Consultechnic" class="footer-logo">
+                    <p>Consultoría y Soluciones de valor en Tecnología. Transformamos empresas a través de la innovación
+                        digital.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="soluciones-microsoft.html">Soluciones Microsoft</a></li>
+                        <li><a href="licenciamiento.html">Licenciamiento</a></li>
+                        <li><a href="hardware-software.html">Hardware y Software</a></li>
+                        <li><a href="power-platform.html">Power Platform</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="../index.html#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="../index.html#portafolio">Portafolio</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="footer-year"></span> Consultechnic. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573178549632" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

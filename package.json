@@ -1,0 +1,22 @@
+{
+  "name": "consultechnic-website",
+  "version": "1.0.0",
+  "description": "Página web profesional de Consultechnic - Soluciones Tecnológicas",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Build completado'",
+    "deploy": "echo 'Listo para desplegar'"
+  },
+  "keywords": [
+    "tecnología",
+    "microsoft",
+    "power-platform",
+    "consultoría",
+    "colombia"
+  ],
+  "author": "Consultechnic",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

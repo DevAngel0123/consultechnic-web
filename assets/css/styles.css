@@ -191,18 +191,15 @@ body {
     border-radius: var(--radius-md);
     padding: 0.75rem 0;
     margin-top: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
+    display: none;
+    /* Changed from opacity/visibility for stability */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     z-index: 1000;
 }
 
 .nav-item-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: block;
 }
 
 .dropdown-item {
